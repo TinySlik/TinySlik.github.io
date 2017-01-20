@@ -1,0 +1,704 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="TinySlik" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://7xt003.com1.z0.glb.clouddn.com/hj.png?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="—tittle:代码规范—&amp;lt;—! more —&amp;gt;12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tiny 的博客">
+<meta property="og:url" content="https://tinyslik.github.io/2017/01/20/代码规范/index.html">
+<meta property="og:site_name" content="Tiny 的博客">
+<meta property="og:description" content="—tittle:代码规范—&amp;lt;—! more —&amp;gt;12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899">
+<meta property="og:updated_time" content="2017-01-20T04:50:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tiny 的博客">
+<meta name="twitter:description" content="—tittle:代码规范—&amp;lt;—! more —&amp;gt;12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title>  | Tiny 的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?dfc0d7e7efa541d3c2ad867ee4643c3e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Tiny 的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一个移动游戏开发者</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-20T12:47:38+08:00" content="2017-01-20">
+              2017-01-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/20/代码规范/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/20/代码规范/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>—tittle:代码规范—<br>&lt;—! more —&gt;<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*****************************************************************************</span><br><span class="line">*  Vni Basic tool library                                                    *</span><br><span class="line">*  Copyright (C) 2017 Vless Inc                                              *</span><br><span class="line">*                                                                            *</span><br><span class="line">*  This file is part of Vni.                                                 *</span><br><span class="line">*                                                                            *</span><br><span class="line">*  it used to learn how  to write code.                                      *</span><br><span class="line">*                                                                            *</span><br><span class="line">*  @file     Example.h                                                       *</span><br><span class="line">*  @brief    对文件的简述                                                     *</span><br><span class="line">*  Details.                                                                  *</span><br><span class="line">*                                                                            *</span><br><span class="line">*  @author   Tiny.Slik                                                       *</span><br><span class="line">*  @email   tinysilk@hotamil.com                                             *</span><br><span class="line">*  @version  1.0.0.1(文件最后修改适应的版本号)                                 *</span><br><span class="line">*                                                                            *</span><br><span class="line">*----------------------------------------------------------------------------*</span><br><span class="line">*  Remark         : Description                                              *</span><br><span class="line">*----------------------------------------------------------------------------*</span><br><span class="line">*  Change History :                                                          *</span><br><span class="line">*  &lt;Date&gt;     | &lt;Version&gt; | &lt;Author&gt;       | &lt;Description&gt;                   *</span><br><span class="line">*----------------------------------------------------------------------------*</span><br><span class="line">*  2017/01/20 | 1.0.0.1   | Tiny.Wu      | Create file                       *</span><br><span class="line">*----------------------------------------------------------------------------*</span><br><span class="line">*                                                                            *</span><br><span class="line">*****************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">// myName</span></span><br><span class="line"><span class="comment">//---------------------------------------------------------------------------</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> STAND_NAME  <span class="string">"tiny"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">// myGlobalValue</span></span><br><span class="line"><span class="comment">//---------------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">long</span> g_globalValue;</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">// myStaticNum</span></span><br><span class="line"><span class="comment">//---------------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> s_num;</span><br><span class="line"></span><br><span class="line"><span class="comment">//---------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">// Platform Defines</span></span><br><span class="line"><span class="comment">//---------------------------------------------------------------------------</span></span><br><span class="line"><span class="keyword">enum</span></span><br><span class="line">&#123;</span><br><span class="line">    OST_PLATFORM_WIN32         = <span class="number">1</span>,</span><br><span class="line">    OST_PLATFORM_LINUX_X86     = <span class="number">2</span>,</span><br><span class="line">    OST_PLATFORM_LINUX_ARM     = <span class="number">3</span>,</span><br><span class="line">    OST_PLATFORM_ANDROID       = <span class="number">4</span>,</span><br><span class="line">    OST_PLATFORM_MACOSX        = <span class="number">5</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line">* @brief Vni Project NameSpace \n</span><br><span class="line">* vni project</span><br><span class="line">*/</span></span><br><span class="line"><span class="keyword">namespace</span> Vni</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span><br><span class="line">* @brief 简要说明文字 </span><br><span class="line">*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> 结构体名字</span><br><span class="line">&#123;</span><br><span class="line">   a1, <span class="comment">/*!&lt; 简要说明文字 */</span> </span><br><span class="line">   a2, <span class="comment">/*!&lt; 简要说明文字 */</span> </span><br><span class="line">   a3, <span class="comment">/*!&lt; 简要说明文字 */</span>  </span><br><span class="line">&#125;StructAbc；</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line">* @brief 类的简单概述 \n(换行)</span><br><span class="line">* 类的详细概述</span><br><span class="line">*/</span></span><br><span class="line"><span class="keyword">class</span>  MyClass</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">//函数功能过于简单或无说明必要时，注释段省写。</span></span><br><span class="line">    MyClass()&#123;&#125;;</span><br><span class="line">    ~MyClass()();</span><br><span class="line">    <span class="comment">/** </span><br><span class="line">      * @brief 函数简要说明-测试函数</span><br><span class="line">      * @param index    参数1</span><br><span class="line">      * @param t            参数2 @see CTest</span><br><span class="line">      *</span><br><span class="line">      * @return 返回说明</span><br><span class="line">      *        -&lt;em&gt;false&lt;/em&gt; fail</span><br><span class="line">      *        -&lt;em&gt;true&lt;/em&gt; succeed</span><br><span class="line">      */</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">const</span> CTest&amp; t)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">        * @brief 打开文件 \n</span><br><span class="line">        * 文件打开成功后，必须使用::CloseFile函数关闭</span><br><span class="line">        * @param[in] fileName    文件名</span><br><span class="line">        * @param[in] fileMode    文件模式，可以由以下几个模块组合而成：</span><br><span class="line">        *     -r读取</span><br><span class="line">        *     -w 可写</span><br><span class="line">        *     -a 添加</span><br><span class="line">        *     -t 文本模式(不能与b联用)</span><br><span class="line">        *     -b 二进制模式(不能与t联用)</span><br><span class="line">        * @return 返回文件编号</span><br><span class="line">        *  --1表示打开文件失败(生成时:.-1)</span><br><span class="line">        * @note文件打开成功后，必须使用::CloseFile函数关闭</span><br><span class="line">        * @par 示例:</span><br><span class="line">        * @code</span><br><span class="line">        *        //用文本只读方式打开文件</span><br><span class="line">        *        int ret = OpenFile("test.txt", "a");</span><br><span class="line">        * @endcode</span><br><span class="line">        * @see 函数::ReadFile::CloseFile (“::”是指定有连接功能,可以看文档里的CloseFile变成绿,点击它可以跳转到CloseFile.)</span><br><span class="line">        * @deprecated由于特殊的原因，这个函数可能会在将来的版本中取消</span><br><span class="line">        */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">openFile</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* fileName, <span class="keyword">const</span> <span class="keyword">char</span>* fileMode)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">    * @brief 关闭文件</span><br><span class="line">    * @param [in] file    文件</span><br><span class="line">    *</span><br><span class="line">    *    @retval 0        成功</span><br><span class="line">    * @retval -1    失败</span><br><span class="line">    * @pre file 必须使用OpenFile的返回值</span><br><span class="line">    */</span>                </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">closeFile</span><span class="params">(<span class="keyword">int</span> file)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//简单使用时</span></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">    * @brief funcGetThings</span><br><span class="line">    * get some fun;</span><br><span class="line">    */</span> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">funcGetThings</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">    * @brief funcGetThings</span><br><span class="line">    * put little apple</span><br><span class="line">    */</span> </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">funcPUtThings</span><span class="params">()</span></span>;</span><br><span class="line">  <span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">      * @brief funcGetThings</span><br><span class="line">      * test some func;</span><br><span class="line">      */</span> </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">funcTestThings</span><span class="params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">    * @brief 成员变量m_abc简要说明</span><br><span class="line">    *</span><br><span class="line">    * 成员变量m_abc的详细说明，这里可以对变量进行</span><br><span class="line">    * 详细的说明和描述，具体方法和函数的标注是一样的</span><br><span class="line">    */</span></span><br><span class="line">    <span class="keyword">char</span> m_abc;</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">char</span> m_uAbc；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/29/基因图谱正章/" rel="next" title="基因图谱">
+                <i class="fa fa-chevron-left"></i> 基因图谱
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/20/代码规范/"
+           data-title="" data-url="https://tinyslik.github.io/2017/01/20/代码规范/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Tiny" />
+          <p class="site-author-name" itemprop="name">Tiny</p>
+          <p class="site-description motion-element" itemprop="description">The stupid speak of the past, the wise of the present, and fools of the future.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tiny</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tinyslik"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
