@@ -206,6 +206,118 @@
             
               
                 
+                <a class="post-title-link" href="/2017/01/22/流程图概览/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-22T10:55:26+08:00" content="2017-01-22">
+              2017-01-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/01/22/流程图概览/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/22/流程图概览/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="流程图概览"><a href="#流程图概览" class="headerlink" title="流程图概览"></a>流程图概览</h2><p>大致概览上来说，整个项目的结构是一个标准的中间件结构，上下层分别面向开发者和驱动层，所以圆框内的我略过，用了相对稳定和结实的散在C_API口，为了应对不同人群的胃口，打散了这些功能口的面向对象特性以后又多做了几层封装来包装这些接口；<br>1是为上下层的书写提供了一个标准和文档注释的说明整理地方<br>2是为上下层的用户提供了更多的选择和设计可能<br>3原本的设计用意是散在接口的上下层做库的包装，以上或者以下均可见，驱动层的架构的驱动仅仅是为接口的统一规格实现设计的中间件。如果涉及到加密，我认为主要的openNi实现库实行即可。<br>同时项目具备良好的跨平台性，实现连同大量的STL工具类也被封装了起来，放在了xnLib中，图中我标注在右边。<br>相对来说较重要的有<br>Event,（事件机制）<br>Lockable,LockGuard,CriticalSection,（线程标示，生命周期线程锁，临界区）<br>Hash,StringHash,（哈希映射表）<br>List,PriorityQueue,（容器）<br>ErrorLogger（日志收集器）<br>整个项目中的线程间问题，索引表以及其他的优质的跨平台实现是这个类库实现的。</p>
+<p>建议的话我个人认为层间交互改为粘合剂语言而不使用C直接暴露接口，脚本语言如lua进行相关的库间数据传递及库的选择链接更具有安全和可扩展性，运行错误的情况在相应的胶合剂语言中可以直接get数据的错误情况，也更适合做多驱动选择时库遍历的链接的直观逻辑当发生错误时也不会抛出异常到系统一级，防止了最坏情况时的软件跳出，为用户体验做一个保险，当然，会稍微的损失一点效率，以及带来更复杂的架构维护和少量的转接口文件，相较与枚举的驱动功能属性接口，甚至可以直接通过方法的使用判断方法是否存在。简小了功能添加时的改动范围。</p>
+<h3 id="驱动层"><a href="#驱动层" class="headerlink" title="驱动层"></a>驱动层</h3><p>首先梳理底层结构，底层的散在C_API比较特殊的是要提供的不仅是调用的一层，还需要回调，所以相对上层的稍稍复杂。<br>大致上在funcs结构体中的大量函数分为stream，Device，Driver。分别实现相关的系统功能，集线到底层的话就划分成了三个基类，分别是XXXBase…到了架构内部使用时这些接口用DriverHandler做了一层浅封装。</p>
+<p>设计模式上在OniCProperties中使用了枚举类型的属性定义，针对不同的设备，在此注册相关的功能，然后在自己的Base实现中在getProperty，setProperty中实现特殊的功能，此处也可以将这个属性结构进行单独的类归纳，然后分别让streamBase等等实现多重继承接口，我个人认为会更加简洁。</p>
+<p>大致上来说驱动的模块的主题逻辑流程集中在初始化的过程中，所以先说下初始化的时候驱动模块的使用情况<br>其中管理及统筹这些驱动，并且实现多设备环境的类主要是Context，可以理解为上下文，环境，由于不是直接面向用户，所以使用g_context的全局用法，相对单例来说，缺少了一些全局的安全性但是对于暴露给用户层的散在接口和OpenNI头文件来说，这一部分是隐藏的，所以没有关系，其中的init方法是，标准的全局驱动层开始调用并且执行工作的主要代码，<br>函数上分为三步，找到openNi库和配置文件，根据配置文件确定驱动库路径及特殊的加载路径的识别，最后进行相关库的加载绑定设备状态回调在回调中进行了m_devices的增删改减管理及库的初始化。以上得到了可执行的驱动对象并纳入了m_deviceDrivers容器管理，等到执行openDevice时，使用所有的已得到的devices对象配对Drivers对象，再通过try()，driver对应的open实现进行设备的初始化，原本就有devicesList的管理，所以多设备的情况和代码是完全支持的，只是在目前的实例里面没有使用而已。在架构图中，DriverHandler主要被Device和Stream使用，正向调用的函数就不赘述了，回调有device的连接，断连，状态改变，stream的新帧（最关键），以及属性改变事件。</p>
+<p>其中newFrameCallBack是主要工作流程中的主线。</p>
+<h2 id="主要逻辑层"><a href="#主要逻辑层" class="headerlink" title="主要逻辑层"></a>主要逻辑层</h2><p>从类图上我们可以看到大致的类的复杂度和集团情况，大致上从集团关联上来说<br>（无主要实现，仅做转接口作用的我直接忽略了一些）</p>
+<p>Context（全局上下文实现集合）</p>
+<p>Recoder，FileRecoder，RecordAssembler，Memento（录像功能的实现类）<br>其中对应的播放器实现作为一个常驻驱动存在，oniFile</p>
+<p>VideoStream，FrameHolder，SyncedStreamsFrameHolder，StreamFrameHolder（数据流的主要处理和多态管理）</p>
+<p>Sensor（介于驱动层和流数据之间的事件驱动数据管理，回调处理绑定）</p>
+<p>Device（创建，初始化，驱动层功能，管理设备范畴内的stream及sensor，向context包装传递使用接口）</p>
+<p>DriverHandler（驱动层散C口包装接口工具）</p>
+<p>FrameManager（帧数据池处理小工具类）</p>
+<p>其中有大量的优秀小类设计及结构体设计我没有提及，涉及到设计本身散在有大量的跨平台线程管理，生命周期式的线程锁，临界区，hash容器，事件注册及传递，跨平台线程间消息队列，日志管理器的优秀实现，info子类信息结构体，由于内容量大，且偏向工具我不赘述。</p>
+<p>抛开功能从模块设计上讲，较为突出的有几个地方。<br>1.FrameHolder实现<br>（1）本身的readFrame调用是Stream调用的接口，但是由于接口存在异线程需求，形成了纯虚实现的FrameHolder接口，进行了Stream口数据输出模块的简易分割，而又不失整体性和易用性。<br>（2）为其他的功能接口提供了可扩展的读取实现口，包括我绘制图形所需要的双buffer口实现地点。</p>
+<p>2.Recoder的虚实现，主类，及装配类，及memento未实现功能类，形成了一个及其便于文件读写调试的整体结构。<br>（1）</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/01/20/代码规范/" itemprop="url">
                   代码规范
                 </a>
@@ -1109,7 +1221,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
