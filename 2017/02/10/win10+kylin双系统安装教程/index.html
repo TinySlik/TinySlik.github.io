@@ -57,23 +57,17 @@
 
 
 
-<meta name="description" content="实际上会有茫茫多的朋友怕麻烦直接选择虚拟机或者wubi方式，个人认为以上两个方式不能算作双系统，更确切的说是主副系统，副系统性能会有很大的瓶颈，虽然使用无障碍，但反过来说因为简单也不需要开帖子讲了。所以我当然是u盘镜像安装的办法。
-安装win10没话说，最靠谱的是大白菜工具大白菜u盘制作官网找个8g的U盘做win10安装盘，镜像可以选微软官方的，也可以雨林木风都没有问题，做成uefi格式的。
-一般">
+<meta name="description" content="折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导">
 <meta property="og:type" content="article">
 <meta property="og:title" content="折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导">
 <meta property="og:url" content="https://tinyslik.github.io/2017/02/10/win10+kylin双系统安装教程/index.html">
 <meta property="og:site_name" content="Tiny 的博客">
-<meta property="og:description" content="实际上会有茫茫多的朋友怕麻烦直接选择虚拟机或者wubi方式，个人认为以上两个方式不能算作双系统，更确切的说是主副系统，副系统性能会有很大的瓶颈，虽然使用无障碍，但反过来说因为简单也不需要开帖子讲了。所以我当然是u盘镜像安装的办法。
-安装win10没话说，最靠谱的是大白菜工具大白菜u盘制作官网找个8g的U盘做win10安装盘，镜像可以选微软官方的，也可以雨林木风都没有问题，做成uefi格式的。
-一般">
+<meta property="og:description" content="折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/671333-dc6d1df4a0cdeeb9.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-02-10T15:18:24.000Z">
+<meta property="og:updated_time" content="2017-02-10T15:19:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导">
-<meta name="twitter:description" content="实际上会有茫茫多的朋友怕麻烦直接选择虚拟机或者wubi方式，个人认为以上两个方式不能算作双系统，更确切的说是主副系统，副系统性能会有很大的瓶颈，虽然使用无障碍，但反过来说因为简单也不需要开帖子讲了。所以我当然是u盘镜像安装的办法。
-安装win10没话说，最靠谱的是大白菜工具大白菜u盘制作官网找个8g的U盘做win10安装盘，镜像可以选微软官方的，也可以雨林木风都没有问题，做成uefi格式的。
-一般">
+<meta name="twitter:description" content="折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/671333-dc6d1df4a0cdeeb9.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -268,7 +262,9 @@
       
 
       
-        <p>实际上会有茫茫多的朋友怕麻烦直接选择虚拟机或者wubi方式，个人认为以上两个方式不能算作双系统，更确切的说是主副系统，副系统性能会有很大的瓶颈，虽然使用无障碍，但反过来说因为简单也不需要开帖子讲了。<br>所以我当然是u盘镜像安装的办法。</p>
+        <h2 id="折腾uefi下win10与Ubuntu-16-04-LTS双系统，完美兼容grub2引导"><a href="#折腾uefi下win10与Ubuntu-16-04-LTS双系统，完美兼容grub2引导" class="headerlink" title="折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导"></a>折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导</h2><hr>
+<a id="more"></a>
+<p>实际上会有茫茫多的朋友怕麻烦直接选择虚拟机或者wubi方式，个人认为以上两个方式不能算作双系统，更确切的说是主副系统，副系统性能会有很大的瓶颈，虽然使用无障碍，但反过来说因为简单也不需要开帖子讲了。<br>所以我当然是u盘镜像安装的办法。</p>
 <h2 id="安装win10"><a href="#安装win10" class="headerlink" title="安装win10"></a>安装win10</h2><p>没话说，最靠谱的是大白菜工具<br><a href="http://bd.dabaicaipe.cn/" target="_blank" rel="external">大白菜u盘制作官网</a><br>找个8g的U盘做win10安装盘，镜像可以选微软官方的，也可以雨林木风都没有问题，做成uefi格式的。</p>
 <p>一般来说用户已经有win10了，需要保证的是win10一定得在unbantu之前安装。<br>win10系统版本方面不存在特别大的问题。我使用的是专业版，但其他的系统也做过测试。</p>
 <p>开始下面几部之前<br>请做好备份！<br>请做好备份！<br>请做好备份！<br>重要的事情说三遍。</p>
@@ -431,7 +427,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装win10"><span class="nav-number">1.</span> <span class="nav-text">安装win10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Ubuntu-Kylin-16-04-LTS"><span class="nav-number">2.</span> <span class="nav-text">安装Ubuntu Kylin 16.04 LTS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#折腾uefi下win10与Ubuntu-16-04-LTS双系统，完美兼容grub2引导"><span class="nav-number">1.</span> <span class="nav-text">折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装win10"><span class="nav-number">2.</span> <span class="nav-text">安装win10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Ubuntu-Kylin-16-04-LTS"><span class="nav-number">3.</span> <span class="nav-text">安装Ubuntu Kylin 16.04 LTS</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
