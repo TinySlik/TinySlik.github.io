@@ -57,32 +57,24 @@
 
 
 
-<meta name="description" content="哈哈，感觉在这边工作棒棒哒,充满艺术氛围先从门口开始看吧">
+<meta name="description" content="实际上会有茫茫多的朋友怕麻烦直接选择虚拟机或者wubi方式，个人认为以上两个方式不能算作双系统，更确切的说是主副系统，副系统性能会有很大的瓶颈，虽然使用无障碍，但反过来说因为简单也不需要开帖子讲了。所以我当然是u盘镜像安装的办法。
+安装win10没话说，最靠谱的是大白菜工具大白菜u盘制作官网找个8g的U盘做win10安装盘，镜像可以选微软官方的，也可以雨林木风都没有问题，做成uefi格式的。
+一般">
 <meta property="og:type" content="article">
-<meta property="og:title" content="现在工作的地方，是4A级景区哦">
-<meta property="og:url" content="https://tinyslik.github.io/2016/04/11/现在工作的地方/index.html">
+<meta property="og:title" content="折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导">
+<meta property="og:url" content="https://tinyslik.github.io/2017/02/10/win10+kylin双系统安装教程/index.html">
 <meta property="og:site_name" content="Tiny 的博客">
-<meta property="og:description" content="哈哈，感觉在这边工作棒棒哒,充满艺术氛围先从门口开始看吧">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0441.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/eaf81a4c510fd9f9d66c26c2222dd42a2834a425.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0442.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0431.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0433.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0435.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/9e3df8dcd100baa1b65830104010b912c8fc2e20.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0429.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/9e3df8dcd100baa1b65830104010b912c8fc2e20.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0429.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0422.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0421.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0419.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0424.jpg">
-<meta property="og:image" content="http://7xt003.com2.z0.glb.clouddn.com/6f061d950a7b0208a17a4b4a65d9f2d3562cc8ee.jpg">
-<meta property="og:updated_time" content="2016-04-15T06:12:59.000Z">
+<meta property="og:description" content="实际上会有茫茫多的朋友怕麻烦直接选择虚拟机或者wubi方式，个人认为以上两个方式不能算作双系统，更确切的说是主副系统，副系统性能会有很大的瓶颈，虽然使用无障碍，但反过来说因为简单也不需要开帖子讲了。所以我当然是u盘镜像安装的办法。
+安装win10没话说，最靠谱的是大白菜工具大白菜u盘制作官网找个8g的U盘做win10安装盘，镜像可以选微软官方的，也可以雨林木风都没有问题，做成uefi格式的。
+一般">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/671333-dc6d1df4a0cdeeb9.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-02-10T15:18:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="现在工作的地方，是4A级景区哦">
-<meta name="twitter:description" content="哈哈，感觉在这边工作棒棒哒,充满艺术氛围先从门口开始看吧">
-<meta name="twitter:image" content="http://7xt003.com2.z0.glb.clouddn.com/IMG_0441.jpg">
+<meta name="twitter:title" content="折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导">
+<meta name="twitter:description" content="实际上会有茫茫多的朋友怕麻烦直接选择虚拟机或者wubi方式，个人认为以上两个方式不能算作双系统，更确切的说是主副系统，副系统性能会有很大的瓶颈，虽然使用无障碍，但反过来说因为简单也不需要开帖子讲了。所以我当然是u盘镜像安装的办法。
+安装win10没话说，最靠谱的是大白菜工具大白菜u盘制作官网找个8g的U盘做win10安装盘，镜像可以选微软官方的，也可以雨林木风都没有问题，做成uefi格式的。
+一般">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/671333-dc6d1df4a0cdeeb9.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -100,7 +92,7 @@
   };
 </script>
 
-  <title> 现在工作的地方，是4A级景区哦 | Tiny 的博客 </title>
+  <title> 折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导 | Tiny 的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -230,7 +222,7 @@
             
             
               
-                现在工作的地方，是4A级景区哦
+                折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导
               
             
           </h1>
@@ -242,8 +234,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-11T19:16:03+08:00" content="2016-04-11">
-              2016-04-11
+            <time itemprop="dateCreated" datetime="2017-02-10T22:46:52+08:00" content="2017-02-10">
+              2017-02-10
             </time>
           </span>
 
@@ -253,8 +245,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/11/现在工作的地方/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/11/现在工作的地方/" itemprop="commentsCount"></span>
+                <a href="/2017/02/10/win10+kylin双系统安装教程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/10/win10+kylin双系统安装教程/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -276,16 +268,14 @@
       
 
       
-        <h3 id="哈哈，感觉在这边工作棒棒哒-充满艺术氛围"><a href="#哈哈，感觉在这边工作棒棒哒-充满艺术氛围" class="headerlink" title="哈哈，感觉在这边工作棒棒哒,充满艺术氛围"></a>哈哈，感觉在这边工作棒棒哒,充满艺术氛围</h3><h4 id="先从门口开始看吧"><a href="#先从门口开始看吧" class="headerlink" title="先从门口开始看吧"></a>先从门口开始看吧</h4><p><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0441.jpg" alt="大门"><br><a id="more"></a></p>
-<h5 id="洋务运动的地方，江南制造局，我们中国的第一口大炮在这里诞生哟！"><a href="#洋务运动的地方，江南制造局，我们中国的第一口大炮在这里诞生哟！" class="headerlink" title="洋务运动的地方，江南制造局，我们中国的第一口大炮在这里诞生哟！"></a>洋务运动的地方，江南制造局，我们中国的第一口大炮在这里诞生哟！</h5><h5 id="然后我就在左手边看到了一个精致的小亭子，还挺老的。"><a href="#然后我就在左手边看到了一个精致的小亭子，还挺老的。" class="headerlink" title="然后我就在左手边看到了一个精致的小亭子，还挺老的。"></a>然后我就在左手边看到了一个精致的小亭子，还挺老的。</h5><p><img src="http://7xt003.com2.z0.glb.clouddn.com/eaf81a4c510fd9f9d66c26c2222dd42a2834a425.jpg" alt="左边看到一个"></p>
-<h5 id="到园子的最西南角，看到了一个铜像，是当年的制造的东西，看来这里除了枪械还是有外快的。"><a href="#到园子的最西南角，看到了一个铜像，是当年的制造的东西，看来这里除了枪械还是有外快的。" class="headerlink" title="到园子的最西南角，看到了一个铜像，是当年的制造的东西，看来这里除了枪械还是有外快的。"></a>到园子的最西南角，看到了一个铜像，是当年的制造的东西，看来这里除了枪械还是有外快的。</h5><p><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0442.jpg" alt="一个古老的铜像"></p>
-<h5 id="顺着山坡往上爬，沿路都是郁郁葱葱的树林，有松鼠从头上飞过。"><a href="#顺着山坡往上爬，沿路都是郁郁葱葱的树林，有松鼠从头上飞过。" class="headerlink" title="顺着山坡往上爬，沿路都是郁郁葱葱的树林，有松鼠从头上飞过。"></a>顺着山坡往上爬，沿路都是郁郁葱葱的树林，有松鼠从头上飞过。</h5><p><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0431.jpg" alt=""><br><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0433.jpg" alt=""></p>
-<h5 id="偶遇了这边的艺术区街，里面都是花草盆景，还有很老旧的木制桌椅，俨然有种复古之感。"><a href="#偶遇了这边的艺术区街，里面都是花草盆景，还有很老旧的木制桌椅，俨然有种复古之感。" class="headerlink" title="偶遇了这边的艺术区街，里面都是花草盆景，还有很老旧的木制桌椅，俨然有种复古之感。"></a>偶遇了这边的艺术区街，里面都是花草盆景，还有很老旧的木制桌椅，俨然有种复古之感。</h5><p><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0435.jpg" alt=""><br><img src="http://7xt003.com2.z0.glb.clouddn.com/9e3df8dcd100baa1b65830104010b912c8fc2e20.jpg" alt=""></p>
-<h5 id="接下来的坡度挺大的两边的花草给人一种很舒服的感觉，明明在相当繁华的地段，空气却还能保持得很好，给赞"><a href="#接下来的坡度挺大的两边的花草给人一种很舒服的感觉，明明在相当繁华的地段，空气却还能保持得很好，给赞" class="headerlink" title="接下来的坡度挺大的两边的花草给人一种很舒服的感觉，明明在相当繁华的地段，空气却还能保持得很好，给赞"></a>接下来的坡度挺大的两边的花草给人一种很舒服的感觉，明明在相当繁华的地段，空气却还能保持得很好，给赞</h5><p><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0429.jpg" alt=""></p>
-<h5 id="爬上了山坡是一座漂亮的石桥"><a href="#爬上了山坡是一座漂亮的石桥" class="headerlink" title="爬上了山坡是一座漂亮的石桥"></a>爬上了山坡是一座漂亮的石桥</h5><p><img src="http://7xt003.com2.z0.glb.clouddn.com/9e3df8dcd100baa1b65830104010b912c8fc2e20.jpg" alt=""></p>
-<h5 id="在桥上看到远处有标志建建筑"><a href="#在桥上看到远处有标志建建筑" class="headerlink" title="在桥上看到远处有标志建建筑"></a>在桥上看到远处有标志建建筑</h5><p><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0429.jpg" alt=""></p>
-<h5 id="这是在上面的一段路的景色"><a href="#这是在上面的一段路的景色" class="headerlink" title="这是在上面的一段路的景色"></a>这是在上面的一段路的景色</h5><p><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0422.jpg" alt=""><br><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0421.jpg" alt=""></p>
-<h5 id="到公司了"><a href="#到公司了" class="headerlink" title="到公司了"></a>到公司了</h5><p><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0419.jpg" alt=""><br><img src="http://7xt003.com2.z0.glb.clouddn.com/IMG_0424.jpg" alt=""><br><img src="http://7xt003.com2.z0.glb.clouddn.com/6f061d950a7b0208a17a4b4a65d9f2d3562cc8ee.jpg" alt=""></p>
+        <p>实际上会有茫茫多的朋友怕麻烦直接选择虚拟机或者wubi方式，个人认为以上两个方式不能算作双系统，更确切的说是主副系统，副系统性能会有很大的瓶颈，虽然使用无障碍，但反过来说因为简单也不需要开帖子讲了。<br>所以我当然是u盘镜像安装的办法。</p>
+<h2 id="安装win10"><a href="#安装win10" class="headerlink" title="安装win10"></a>安装win10</h2><p>没话说，最靠谱的是大白菜工具<br><a href="http://bd.dabaicaipe.cn/" target="_blank" rel="external">大白菜u盘制作官网</a><br>找个8g的U盘做win10安装盘，镜像可以选微软官方的，也可以雨林木风都没有问题，做成uefi格式的。</p>
+<p>一般来说用户已经有win10了，需要保证的是win10一定得在unbantu之前安装。<br>win10系统版本方面不存在特别大的问题。我使用的是专业版，但其他的系统也做过测试。</p>
+<p>开始下面几部之前<br>请做好备份！<br>请做好备份！<br>请做好备份！<br>重要的事情说三遍。</p>
+<h2 id="安装Ubuntu-Kylin-16-04-LTS"><a href="#安装Ubuntu-Kylin-16-04-LTS" class="headerlink" title="安装Ubuntu Kylin 16.04 LTS"></a>安装Ubuntu Kylin 16.04 LTS</h2><p><a href="http://cn.ubuntu.com/download/" target="_blank" rel="external">官方镜像</a><br>选好32位或者64位，看好自己的内存，大于8G的推荐64</p>
+<p>用麒麟的话美化的和中文化也都不错，选原版也可以自己配置，个人觉得麒麟的东西没有太鸡肋，所以直接上Kylin即可。</p>
+<p><a href="https://cn.ultraiso.net/xiazai.html" target="_blank" rel="external">软碟通（UltraISO）</a><br>制作u盘镜像比较好用</p>
+<p>进入磁盘管理<br><img src="http://upload-images.jianshu.io/upload_images/671333-dc6d1df4a0cdeeb9.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
     </div>
@@ -303,17 +293,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/11/南北朝时代的青铜器/" rel="next" title="这次是货真价实的美人鱼，在博物馆里">
-                <i class="fa fa-chevron-left"></i> 这次是货真价实的美人鱼，在博物馆里
+              <a href="/2017/01/22/流程图概览/" rel="next" title="阅读openNi的个人小结">
+                <i class="fa fa-chevron-left"></i> 阅读openNi的个人小结
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/02/大爱蕾姆/" rel="prev" title="大爱蕾姆">
-                大爱蕾姆 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -362,8 +348,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/11/现在工作的地方/"
-           data-title="现在工作的地方，是4A级景区哦" data-url="https://tinyslik.github.io/2016/04/11/现在工作的地方/">
+      <div class="ds-thread" data-thread-key="2017/02/10/win10+kylin双系统安装教程/"
+           data-title="折腾uefi下win10与Ubuntu 16.04 LTS双系统，完美兼容grub2引导" data-url="https://tinyslik.github.io/2017/02/10/win10+kylin双系统安装教程/">
       </div>
     
   </div>
@@ -445,7 +431,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#哈哈，感觉在这边工作棒棒哒-充满艺术氛围"><span class="nav-number">1.</span> <span class="nav-text">哈哈，感觉在这边工作棒棒哒,充满艺术氛围</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#先从门口开始看吧"><span class="nav-number">1.1.</span> <span class="nav-text">先从门口开始看吧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#洋务运动的地方，江南制造局，我们中国的第一口大炮在这里诞生哟！"><span class="nav-number">1.1.1.</span> <span class="nav-text">洋务运动的地方，江南制造局，我们中国的第一口大炮在这里诞生哟！</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#然后我就在左手边看到了一个精致的小亭子，还挺老的。"><span class="nav-number">1.1.2.</span> <span class="nav-text">然后我就在左手边看到了一个精致的小亭子，还挺老的。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#到园子的最西南角，看到了一个铜像，是当年的制造的东西，看来这里除了枪械还是有外快的。"><span class="nav-number">1.1.3.</span> <span class="nav-text">到园子的最西南角，看到了一个铜像，是当年的制造的东西，看来这里除了枪械还是有外快的。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#顺着山坡往上爬，沿路都是郁郁葱葱的树林，有松鼠从头上飞过。"><span class="nav-number">1.1.4.</span> <span class="nav-text">顺着山坡往上爬，沿路都是郁郁葱葱的树林，有松鼠从头上飞过。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#偶遇了这边的艺术区街，里面都是花草盆景，还有很老旧的木制桌椅，俨然有种复古之感。"><span class="nav-number">1.1.5.</span> <span class="nav-text">偶遇了这边的艺术区街，里面都是花草盆景，还有很老旧的木制桌椅，俨然有种复古之感。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#接下来的坡度挺大的两边的花草给人一种很舒服的感觉，明明在相当繁华的地段，空气却还能保持得很好，给赞"><span class="nav-number">1.1.6.</span> <span class="nav-text">接下来的坡度挺大的两边的花草给人一种很舒服的感觉，明明在相当繁华的地段，空气却还能保持得很好，给赞</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#爬上了山坡是一座漂亮的石桥"><span class="nav-number">1.1.7.</span> <span class="nav-text">爬上了山坡是一座漂亮的石桥</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在桥上看到远处有标志建建筑"><span class="nav-number">1.1.8.</span> <span class="nav-text">在桥上看到远处有标志建建筑</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#这是在上面的一段路的景色"><span class="nav-number">1.1.9.</span> <span class="nav-text">这是在上面的一段路的景色</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#到公司了"><span class="nav-number">1.1.10.</span> <span class="nav-text">到公司了</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装win10"><span class="nav-number">1.</span> <span class="nav-text">安装win10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Ubuntu-Kylin-16-04-LTS"><span class="nav-number">2.</span> <span class="nav-text">安装Ubuntu Kylin 16.04 LTS</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
