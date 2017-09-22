@@ -59,13 +59,13 @@
 
 <meta name="description" content="…">
 <meta property="og:type" content="article">
-<meta property="og:title" content="今天久违的一个人生活">
-<meta property="og:url" content="https://tinyslik.github.io/2017/05/06/生活小总结/index.html">
+<meta property="og:title" content="BH工作文档">
+<meta property="og:url" content="https://tinyslik.github.io/2017/09/22/BH工作文档/index.html">
 <meta property="og:site_name" content="Tiny 的博客">
 <meta property="og:description" content="…">
-<meta property="og:updated_time" content="2017-05-06T05:22:28.000Z">
+<meta property="og:updated_time" content="2017-09-22T08:52:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="今天久违的一个人生活">
+<meta name="twitter:title" content="BH工作文档">
 <meta name="twitter:description" content="…">
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> 今天久违的一个人生活 | Tiny 的博客 </title>
+  <title> BH工作文档 | Tiny 的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -214,7 +214,7 @@
             
             
               
-                今天久违的一个人生活
+                BH工作文档
               
             
           </h1>
@@ -226,8 +226,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-05-06T10:46:25+08:00" content="2017-05-06">
-              2017-05-06
+            <time itemprop="dateCreated" datetime="2017-09-22T10:46:25+08:00" content="2017-09-22">
+              2017-09-22
             </time>
           </span>
 
@@ -237,8 +237,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2017/05/06/生活小总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/06/生活小总结/" itemprop="commentsCount"></span>
+                <a href="/2017/09/22/BH工作文档/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/09/22/BH工作文档/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -261,16 +261,35 @@
 
       
         <p>…<br><a id="more"></a></p>
-<p>大宝赶进度去加班了。<br>然而有种，爸爸妈妈去上班，我也不用去幼儿园的赶脚…棒棒哒！</p>
-<p>上午把家里打扫一遍，然后跟店家沟通硬盘退换的事情，哎已经第二次了，好蛋疼。 </p>
-<p>咖啡机现在已近用得很6，奶球到位，味道开始对了，但是因为咖啡豆放得有点久，所以口感欠佳，过段时间，等新的无锡房子弄好，咖啡机我也要带过去，嘿嘿。 </p>
-<p>下午准备去买菜，先练琴到下午4点，然后开始做。  </p>
-<p>今天要练习《成都》，嘿嘿，第四首曲子了，虽然我隔着工作练习间隔很长，但是我的手指对琴的感觉越来越顺了，而且即使没有茧子也开始觉得不是很痛，果然乐器是要十年如一日地坚持才能有所成就，我虽然晚了，但是因为爱所以也会一如既往的坚持下去！！哈哈，也许有一天我不做程序员了，真的成了一个宠物医院院长的时候，周末我可以去卖艺吧，虽然嗓音没特色，但是真的想起来， 我有一定的乐感，也很喜欢摆弄这些东西，也许我也能做点什么呢，谁知道？</p>
-<p>毛毛还是那么不省心…又瘦了，今天要跟麻麻商量毛毛的事情，感觉还是得有人天天伺候着才行.</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=436514312&auto=1&height=66"></iframe>
-
-
-
+<h5 id="STBCGI-YW-以及-STBTransfer-项目编译"><a href="#STBCGI-YW-以及-STBTransfer-项目编译" class="headerlink" title="STBCGI_YW 以及 STBTransfer 项目编译"></a>STBCGI_YW 以及 STBTransfer 项目编译</h5><p>头文件包含丢失，查阅并且环境设置。<br>包括项目本身路径/￥PROJECT_PATH￥/STB_CGI_YW<br>以及工具库BCMLib/Head/中的常规调试库以及网络库<br>BCM7251s下的编译用库</p>
+<p>eclipse 3.8 juno不太稳定，down了三次了<br>不是用户官方的arm-linux-gnueabihf工具，使用顾那边拖来的库<br>改用新版的eclipes （4.7 oxygen），老版的cdt存在问题，不识别新的工程。<br>弄清了关于新版cdt工程的一些问题：<br> .metadata 中保存了工程的本地临时配置和中间文件<br>.cproject/.project文件中保存了主要工程的配置</p>
+<p>在执行可执行文件时遇到找不到路径的情况，尝试了权限，用户等问题以后尝试了android的依赖库缺失的问题<br>找到了16.04 Android编译的依赖库安装帖子，安装了大量android编译依赖的库<br>执行相关的android执行文件编译器通过</p>
+<p>配置了C/C++ BUild的配置中的Path，改成自己的ToolChain/BCM72515/build<br>/bin/目录，确认能够找到交叉编译的工具链。</p>
+<p>工程正常编译</p>
+<h5 id="工程业务流程理解"><a href="#工程业务流程理解" class="headerlink" title="工程业务流程理解"></a>工程业务流程理解</h5><p>文件夹的工程管理中.gitignore中忽略了Release（生成结果），RemoteSystemsTempFiles（中间文件），<br>.metadate (eclipse本地工程保存的文件)</p>
+<p>先忽略这三个文件，其他部分为源码或执行脚本</p>
+<p>常规的流程为使用eclipse打开工程，其中主要是STBCGI_YW工程，STBTransfer工程<br>这两个工程是主要的生成工程，主要的业务执行流程和网端逻辑都在里面。</p>
+<p>编译完毕的两个工程的文件都放在自己对应目录的文件夹名字（xxxx）Release内，工程中也仅存在一个编译配置Release。</p>
+<p>ToolChain里面是编译使用的环境以及工具库</p>
+<p>Resource文件夹内是资源文件及界面的数据驱动文件</p>
+<p>经过执行RecreateResource.sh脚本可以通过STBTool已经编译完毕的界面定义工具来得到最后的界面定义结果Skin_chs.IMG</p>
+<p>完毕之后使用Release.sh脚本来将包括生成的Release骨架在内的，库文件，执行文件统一拷贝到Release文件夹内，根据编译的平台是否连接u盘或者工厂来决定是否执行脚本link2copy.sh，如果两者都不是则说明在本地，那么app.sh 和 STBCfg.xml就没有意义</p>
+<p>link2copy脚本执行后发现是一个规律的保留名字最长的同前缀库的方案，使用新的更长字段的库确保功能更新</p>
+<p>release文件夹下假设是udisk配置下生成的则会存在两个文件夹，两个文件，分别是，app.sh  STBCfg.xml<br>前者定义了在板子上app启动运行的主要过程，后者定义了板子运行时需要通过远程的服务器验证获取相关的文件进行相关的验证信息，所以需要有一个默认的</p>
+<h5 id="程序在板子上和服务器上运行起来的大致流程"><a href="#程序在板子上和服务器上运行起来的大致流程" class="headerlink" title="程序在板子上和服务器上运行起来的大致流程"></a>程序在板子上和服务器上运行起来的大致流程</h5><p>启动板子后板子上 /stb/app下的app.sh脚本会作为程序入口点运行，先后检查usb,hardisk,app,等然后执行检查到的相应目录中的app.sh 中的脚本，</p>
+<p>以usbdisk的脚本为例，先后做了udhcpc的ip分配</p>
+<p>判断/app目录下是否存在数据，假设存在那么就会直接执行本地的ktv.sh脚本</p>
+<p>假设没有serverip.data文件则说明第一次运行。</p>
+<p>直接从本地执行找到运行app.sh的当前目录下找到两个文件夹使用，并进入连接设置画面</p>
+<p>否则从远端的服务器上进行mount来获取文件，到本地的tmpapp目录中；将日志文件替换放置到/pravite/【本机 mac 地址】中传到服务器上，再挂断加载private。<br>执行ktv.sh进入常规界面。</p>
+<p>将三个主程序运行的目录进行权限提升然后启动lighttpd接收数据<br>关闭打开的udhcpc使用nexus加载android系统需要的一些基础配置，然后调用STBTransfer和STBCGI_YW文件来加载界面，网络交互。</p>
+<h4 id="STBTransfer-代码翻看"><a href="#STBTransfer-代码翻看" class="headerlink" title="STBTransfer 代码翻看"></a>STBTransfer 代码翻看</h4><p>从KTVMain.cpp中找到程序入口点，int main()函数</p>
+<p>LOGMSG 层级的log输出工具，猜测android gdb实现</p>
+<p>读取板子上的固定位置的STBCfg.xml文件确定默认的ip配置和显示</p>
+<p>CKTVConfig类管理读取到的信息来完成第一幅配置画面的数据驱动</p>
+<p>NativeStart函数来初始化BaseApp基础消息处理类，确定显示字体</p>
+<p>创建并初始化全局的手写处理，页面管理器，播放控制等等全局UI类实例<br>最后起消息响应架构的循环的主线程。</p>
+<p>在main函数中用NativeOnStep函数执行E3dopenGL的帧渲染线程操作并记录执行时间</p>
 
       
     </div>
@@ -288,17 +307,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/11/有感/" rel="next" title="每个人的起点是不一样的,所以，你要格外努力">
-                <i class="fa fa-chevron-left"></i> 每个人的起点是不一样的,所以，你要格外努力
+              <a href="/2017/05/06/生活小总结/" rel="next" title="今天久违的一个人生活">
+                <i class="fa fa-chevron-left"></i> 今天久违的一个人生活
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/22/BH工作文档/" rel="prev" title="BH工作文档">
-                BH工作文档 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -347,8 +362,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/05/06/生活小总结/"
-           data-title="今天久违的一个人生活" data-url="https://tinyslik.github.io/2017/05/06/生活小总结/">
+      <div class="ds-thread" data-thread-key="2017/09/22/BH工作文档/"
+           data-title="BH工作文档" data-url="https://tinyslik.github.io/2017/09/22/BH工作文档/">
       </div>
     
   </div>
@@ -430,7 +445,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#STBCGI-YW-以及-STBTransfer-项目编译"><span class="nav-number">1.</span> <span class="nav-text">STBCGI_YW 以及 STBTransfer 项目编译</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工程业务流程理解"><span class="nav-number">2.</span> <span class="nav-text">工程业务流程理解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#程序在板子上和服务器上运行起来的大致流程"><span class="nav-number">3.</span> <span class="nav-text">程序在板子上和服务器上运行起来的大致流程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#STBTransfer-代码翻看"><span class="nav-number"></span> <span class="nav-text">STBTransfer 代码翻看</span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
