@@ -63,7 +63,7 @@
 <meta property="og:url" content="https://tinyslik.github.io/2017/09/22/BH工作文档/index.html">
 <meta property="og:site_name" content="Tiny 的博客">
 <meta property="og:description" content="…">
-<meta property="og:updated_time" content="2017-09-22T09:39:12.000Z">
+<meta property="og:updated_time" content="2017-09-22T09:40:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BH工作文档">
 <meta name="twitter:description" content="…">
@@ -292,7 +292,7 @@
 <p>直接从本地执行找到运行app.sh的当前目录下找到两个文件夹使用，并进入连接设置画面</p>
 <p>否则从远端的服务器上进行mount来获取文件，到本地的tmpapp目录中；将日志文件替换放置到/pravite/【本机 mac 地址】中传到服务器上，再挂断加载private。<br>执行ktv.sh进入常规界面。</p>
 <p>将三个主程序运行的目录进行权限提升然后启动lighttpd接收数据<br>关闭打开的udhcpc使用nexus加载android系统需要的一些基础配置，然后调用STBTransfer和STBCGI_YW文件来加载界面，网络交互。</p>
-<h4 id="STBTransfer-代码翻看"><a href="#STBTransfer-代码翻看" class="headerlink" title="STBTransfer 代码翻看"></a>STBTransfer 代码翻看</h4><p>从KTVMain.cpp中找到程序入口点，int main()函数</p>
+<h5 id="STBTransfer-代码翻看"><a href="#STBTransfer-代码翻看" class="headerlink" title="STBTransfer 代码翻看"></a>STBTransfer 代码翻看</h5><p>从KTVMain.cpp中找到程序入口点，int main()函数</p>
 <p>LOGMSG 层级的log输出工具，猜测android gdb实现</p>
 <p>读取板子上的固定位置的STBCfg.xml文件确定默认的ip配置和显示</p>
 <p>CKTVConfig类管理读取到的信息来完成第一幅配置画面的数据驱动</p>
@@ -455,7 +455,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#STBCGI-YW-以及-STBTransfer-项目编译"><span class="nav-number">1.</span> <span class="nav-text">STBCGI_YW 以及 STBTransfer 项目编译</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工程业务流程理解"><span class="nav-number">2.</span> <span class="nav-text">工程业务流程理解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#程序在板子上和服务器上运行起来的大致流程"><span class="nav-number">3.</span> <span class="nav-text">程序在板子上和服务器上运行起来的大致流程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#STBTransfer-代码翻看"><span class="nav-number"></span> <span class="nav-text">STBTransfer 代码翻看</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#STBCGI-YW-以及-STBTransfer-项目编译"><span class="nav-number">1.</span> <span class="nav-text">STBCGI_YW 以及 STBTransfer 项目编译</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工程业务流程理解"><span class="nav-number">2.</span> <span class="nav-text">工程业务流程理解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#程序在板子上和服务器上运行起来的大致流程"><span class="nav-number">3.</span> <span class="nav-text">程序在板子上和服务器上运行起来的大致流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#STBTransfer-代码翻看"><span class="nav-number">4.</span> <span class="nav-text">STBTransfer 代码翻看</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
