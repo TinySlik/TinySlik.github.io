@@ -63,7 +63,7 @@
 <meta property="og:url" content="https://tinyslik.github.io/2017/09/22/BH工作文档/index.html">
 <meta property="og:site_name" content="Tiny 的博客">
 <meta property="og:description" content="…">
-<meta property="og:updated_time" content="2017-09-22T09:40:30.000Z">
+<meta property="og:updated_time" content="2017-09-26T03:43:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BH工作文档">
 <meta name="twitter:description" content="…">
@@ -269,6 +269,9 @@
 <h5 id="工程业务流程理解"><a href="#工程业务流程理解" class="headerlink" title="工程业务流程理解"></a>工程业务流程理解</h5><p>文件夹的工程管理中.gitignore中忽略了Release（生成结果），RemoteSystemsTempFiles（中间文件），<br>.metadate (eclipse本地工程保存的文件)</p>
 <p>先忽略这三个文件，其他部分为源码或执行脚本</p>
 <p>常规的流程为使用eclipse打开工程，其中主要是STBCGI_YW工程，STBTransfer工程<br>这两个工程是主要的生成工程，主要的业务执行流程和网端逻辑都在里面。</p>
+<blockquote>
+<p>注意点：使用了一段时间以后还是觉得用eclipse+cdt这样冗杂的ide编译这样精简的小项目很废，所以我尝试使用sublime text加插件和编译系统的方式去编译这一过程，最后在系统里也集成脚本的使用。</p>
+</blockquote>
 <p>编译完毕的两个工程的文件都放在自己对应目录的文件夹名字（xxxx）Release内，工程中也仅存在一个编译配置Release。</p>
 <p>ToolChain里面是编译使用的环境以及工具库</p>
 <p>Resource文件夹内是资源文件及界面的数据驱动文件</p>
@@ -283,8 +286,9 @@
 <p>然后在自己的开发电脑中将编译且处理好的当前的两个文件夹拖至指定位置,<br>最后运行sudo /etc/init.d/rpcbind restart进行rpcbind重启<br>sudo /etc/init.d/nfs-kernel-server restart进行nfs服务重启</p>
 <p>之后sudo /etc/init.d/nfs-kernel-server status查看运行状态<br>showmount -e查看提供挂载服务的文件夹列表<br>本地尝试用 sudo mount -t nfs localhost:/root/STBVerify/Program/testDir来挂载文件夹(testDir 需要自己创建)，尝试成功以后可以用 umount /testDir来解除挂载</p>
 <p>之后就可以通过mount -t nfs -o nolock -o rw [开发机的ip地址]:/root/STBVerify/Program 来 在开发板上尝试挂载nfs系统，</p>
-<p>另外的注意点：</p>
-<p>我的电脑在执行脚本期间遇到了mount失效的情况，是由于udhcpc服务没有分配成功局域网ip地址导致的，在脚本中我sleep 3 来延迟了启动，udhcpc服务正常运行。</p>
+<blockquote>
+<p>注意点：我的电脑在执行脚本期间遇到了mount失效的情况，是由于udhcpc服务没有分配成功局域网ip地址导致的，在脚本中我sleep 3 来延迟了启动，udhcpc服务正常运行。</p>
+</blockquote>
 <h5 id="程序在板子上和服务器上运行起来的大致流程"><a href="#程序在板子上和服务器上运行起来的大致流程" class="headerlink" title="程序在板子上和服务器上运行起来的大致流程"></a>程序在板子上和服务器上运行起来的大致流程</h5><p>启动板子后板子上 /stb/app下的app.sh脚本会作为程序入口点运行，先后检查usb,hardisk,app,等然后执行检查到的相应目录中的app.sh 中的脚本，</p>
 <p>以usbdisk的脚本为例，先后做了udhcpc的ip分配</p>
 <p>判断/app目录下是否存在数据，假设存在那么就会直接执行本地的ktv.sh脚本</p>
@@ -292,7 +296,11 @@
 <p>直接从本地执行找到运行app.sh的当前目录下找到两个文件夹使用，并进入连接设置画面</p>
 <p>否则从远端的服务器上进行mount来获取文件，到本地的tmpapp目录中；将日志文件替换放置到/pravite/【本机 mac 地址】中传到服务器上，再挂断加载private。<br>执行ktv.sh进入常规界面。</p>
 <p>将三个主程序运行的目录进行权限提升然后启动lighttpd接收数据<br>关闭打开的udhcpc使用nexus加载android系统需要的一些基础配置，然后调用STBTransfer和STBCGI_YW文件来加载界面，网络交互。</p>
-<h5 id="STBTransfer-代码翻看"><a href="#STBTransfer-代码翻看" class="headerlink" title="STBTransfer 代码翻看"></a>STBTransfer 代码翻看</h5><p>从KTVMain.cpp中找到程序入口点，int main()函数</p>
+<h5 id="尝试更新在板子上的程序的流程注意点"><a href="#尝试更新在板子上的程序的流程注意点" class="headerlink" title="尝试更新在板子上的程序的流程注意点"></a>尝试更新在板子上的程序的流程注意点</h5><blockquote>
+<p>尝试在板子上使用新编译出来的Program，按照第一次的部署流程来做发现并没有能够及时更新，最后发现linux的缓存机制起到了作用，在板子断电以后没有保存新写入的一份文件，而用了原来的一份，解决办法是插上新的u盘并使用telnet host 来连接调试用板子。输入sync来确定缓存写入到硬盘。</p>
+</blockquote>
+<h5 id="STBTransfer-代码翻看"><a href="#STBTransfer-代码翻看" class="headerlink" title="STBTransfer 代码翻看"></a>STBTransfer 代码翻看</h5><p>调试和审查代码及其配置我在本地开了一条分支forTest，用于自己修改玩耍。</p>
+<p>从KTVMain.cpp中找到程序入口点，int main()函数</p>
 <p>LOGMSG 层级的log输出工具，猜测android gdb实现</p>
 <p>读取板子上的固定位置的STBCfg.xml文件确定默认的ip配置和显示</p>
 <p>CKTVConfig类管理读取到的信息来完成第一幅配置画面的数据驱动</p>
@@ -455,7 +463,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#STBCGI-YW-以及-STBTransfer-项目编译"><span class="nav-number">1.</span> <span class="nav-text">STBCGI_YW 以及 STBTransfer 项目编译</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工程业务流程理解"><span class="nav-number">2.</span> <span class="nav-text">工程业务流程理解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#程序在板子上和服务器上运行起来的大致流程"><span class="nav-number">3.</span> <span class="nav-text">程序在板子上和服务器上运行起来的大致流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#STBTransfer-代码翻看"><span class="nav-number">4.</span> <span class="nav-text">STBTransfer 代码翻看</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#STBCGI-YW-以及-STBTransfer-项目编译"><span class="nav-number">1.</span> <span class="nav-text">STBCGI_YW 以及 STBTransfer 项目编译</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工程业务流程理解"><span class="nav-number">2.</span> <span class="nav-text">工程业务流程理解</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#程序在板子上和服务器上运行起来的大致流程"><span class="nav-number">3.</span> <span class="nav-text">程序在板子上和服务器上运行起来的大致流程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#尝试更新在板子上的程序的流程注意点"><span class="nav-number">4.</span> <span class="nav-text">尝试更新在板子上的程序的流程注意点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#STBTransfer-代码翻看"><span class="nav-number">5.</span> <span class="nav-text">STBTransfer 代码翻看</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
